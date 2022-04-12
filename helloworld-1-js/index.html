@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Quickstart Tutorial with JS code</title>
+    <!-- With the script tag, we load and initialize OpenUI5 with typical bootstrap parameters
+        src: source to load OpenUI5 from, use the path to Content Delivery Network (CDN) for OpenUI5
+        libs: control libraries
+        resourceroots: the namespace for all resources of the app. This way, we can easily reference
+                       additional files that we are about to create in this step
+        onInit: load the "helloworld" module that holds the application logic
+    -->
+    <script id="sap-ui-bootstrap"
+		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_belize"
+		data-sap-ui-libs="sap.m"
+		data-sap-ui-resourceroots='{"Quickstart": "./"}'
+		data-sap-ui-onInit="module:Quickstart/helloworld"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-async="true">
+	</script>
+</head>
+
+<body class="sapUiBody" id="content">
+        
+</body>
+</html>
