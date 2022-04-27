@@ -8,7 +8,7 @@ sap.ui.define([
 		"use strict";
 
 		new Button({
-			text: "Display HelloWorld toast",
+			text: "Ready...",
 			// callback on "press" event (click)
 			press: function () {
 				MessageToast.show("Hello World!");

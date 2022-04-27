@@ -5,10 +5,10 @@ sap.ui.define([
     function (XMLView) {
         "use strict";
 
-        XMLView.create({viewName: "Quickstart.Pages"})
+        XMLView.create({viewName: "Quickstart.App"})
         // the view is loaded asynchronously
         .then(function (oView) {
-            // placed into the html element having ID:content
+            // place into the html element having ID:content
             oView.placeAt("content");
 	    });
 });

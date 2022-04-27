@@ -4,14 +4,16 @@ sap.ui.define([
     ], 
     function (Controller, MessageToast) {
         "use strict";
-        // load the "Controller" base class and extend with behaviour
-        return Controller.extend(
+        // load the Controller base class and extend with behaviour
+        Controller.extend(
             // summon the Quickstart.App controller
             "Quickstart.App",
-            { // event handler for button
+            { // add event handler for button
                 onPressButton : function () {
+                    // the MessageToast is also loaded as a dependency
                     MessageToast.show("Hello World!");
                 }
-            });
+            }
+        );
     }
 );

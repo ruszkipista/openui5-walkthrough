@@ -3,6 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>OpenUI5 Walkthrough</title>
+    <!-- With the <script> tag, we load and initialize OpenUI5 with typical bootstrap parameters
+        src: source to load OpenUI5 from, use the path to Content Delivery Network (CDN) for OpenUI5
+        libs: control libraries
+        resourceroots: the namespace for all resources of the app. 
+					   This way, we can easily reference additional files
+        onInit: load the "index" module (index.js file) that holds the application starter logic
+    -->	
 	<script id="sap-ui-bootstrap"
 		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 		data-sap-ui-theme="sap_belize"
@@ -14,6 +21,8 @@
 	</script>
 </head>
 
-<body id="body-content" class="sapUiBody">
-</body>
+<!-- the ID is utilized by loading additional content into the <body> tag
+	 by the index.js module -->
+<body id="body-content" class="sapUiBody"></body>
+
 </html>

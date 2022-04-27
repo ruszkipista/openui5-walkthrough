@@ -1,13 +1,15 @@
 <mvc:View
-	controllerName="Quickstart.Pages"
+	controllerName="Quickstart.App"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core"
 	xmlns:tnt="sap.tnt">
+	<!-- assign an ID to the App control, so that the controller can easily identify it -->
 	<App id="twopageapp">
 		<Page id="startpage" title="My Two Page App">
+			<!-- add icon and press behaviour to the button -->
 			<Button
 				icon="sap-icon://sap-ui5"
 				text="Go!"
@@ -27,7 +29,9 @@
 
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell>
+						<!-- bind to XML model values (see App.controller.js/onInit) under key "features" -->
 						<FlexBox items="{/features}" justifyContent="Center" wrap="Wrap" class="sapUiSmallMarginBottom">
+							<!-- for each item generate an InfoLabel and fill {} template with item -->
 							<tnt:InfoLabel text="{}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
 						</FlexBox>
 					</l:BlockLayoutCell>
@@ -38,6 +42,7 @@
 						<!-- expandable panel -->
 						<Panel headerText="Are you ready?" expandable="true">
 							<Switch change=".onChangeOfSwitch" customTextOn="yes" customTextOff="no"/>
+							<!-- initial state of visibility: Off -->
 							<l:HorizontalLayout id="readyLayoutBox" visible="false" class="sapUiSmallMargin">
 								<Text text="Ok, let's get you started!" class="sapUiTinyMarginEnd"/>
 								<Link text="Learn more" href="https://openui5.hana.ondemand.com/"/>
