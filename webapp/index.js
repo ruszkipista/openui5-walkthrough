@@ -1,12 +1,15 @@
+// bootstrap application logic
+// avoid having executable code directly in the HTML file for security reasons
+// this script is called by the index.html. We declared there in <script>/data-sap-ui-onInit
 sap.ui.define(
-  // load UI control Text
-  ["sap/m/Text"],
-  function (Text) {
-	"use strict";
-    // create a new Text UI control
-    new Text({ text: "Hello UI5!" })
-    // load the Text UI control into index.html
-    // by targeting the <body> element via its ID
-    .placeAt("body-content");
-  }
-);
+  ["sap/ui/core/mvc/XMLView"],
+  function (XMLView) {
+	  "use strict";
+    // the view is loaded asynchronously
+    XMLView.create({viewName: "sap.ui.demo.walkthrough.view.App"})
+    .then(function (oView) {
+      // place into the html element having ID:body-content
+      oView.placeAt("body-content");
+    });
+
+});

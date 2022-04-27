@@ -2,18 +2,22 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<!-- the app can overrule this title -->
 	<title>OpenUI5 Walkthrough</title>
     <!-- With the <script> tag, we load and initialize OpenUI5 with typical bootstrap parameters
-        src: source to load OpenUI5 from, use the path to Content Delivery Network (CDN) for OpenUI5
-        libs: control libraries
-        resourceroots: the namespace for all resources of the app. 
-					   This way, we can easily reference additional files
+        src: load OpenUI5 core library from Content Delivery Network (CDN)
+        libs: UI control libraries
+		compatVersion: make use of the most recent functionality of SAPUI5 with "edge"
+        resourceroots: set sap.ui.demo.walkthrough the namespace for all resources of the app,
+			           declare that files in the namespace are located in the same folder as index.html
         onInit: load the "index" module (index.js file) that holds the application starter logic
+			    With this, avoid directly executable JavaScript code in the HTML file
+		async: run bootstrapping asynchronously: load resources simultaneously for performance reasons
     -->	
 	<script id="sap-ui-bootstrap"
 		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
-		data-sap-ui-theme="sap_belize"
 		data-sap-ui-libs="sap.m"
+		data-sap-ui-theme="sap_belize"
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-resourceroots='{ "sap.ui.demo.walkthrough": "./" }'
         data-sap-ui-onInit="module:sap/ui/demo/walkthrough/index"
@@ -21,8 +25,7 @@
 	</script>
 </head>
 
-<!-- the ID is utilized by loading additional content into the <body> tag
-	 by the index.js module -->
+<!-- the ID is utilized when the index.js module / onInit loads additional content into the <body> tag -->
 <body id="body-content" class="sapUiBody"></body>
 
 </html>
