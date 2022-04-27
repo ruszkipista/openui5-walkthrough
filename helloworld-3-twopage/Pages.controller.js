@@ -6,7 +6,7 @@ sap.ui.define([
     function (Controller, MessageToast, JSONModel) {
         "use strict";
 
-        return Controller.extend("Quickstart.App", {
+        return Controller.extend("Quickstart.Pages", {
             // button behaviour
             onPressButtonGo : function () {
                 MessageToast.show("Hello UI5!");
