@@ -7,12 +7,26 @@
 sap.ui.define(
     // array of required modules
     ["sap/ui/core/mvc/Controller",
-     "sap/m/MessageToast"],
+     "sap/m/MessageToast",
+     "sap/ui/model/json/JSONModel"],
     // call back function for after modules loaded
     // Use the name of the artifact to load for naming the function parameters (without namespace)     
-    function (Controller, MessageToast) {
+    function (Controller, MessageToast, JSONModel) {
       "use strict";
+      
       return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
+          // lifecycle method, that is invoked by the framework when the controller is created
+          onInit : function () {
+            // set data model on view
+            let oData = {
+              recipient : {
+                  name : "World"
+              }
+            };
+            let oModel = new JSONModel(oData);
+            this.getView().setModel(oModel);
+          },
+
           onShowHello: function(){
             // show a native JavaScript alert
             MessageToast.show("Hello UI5!");
