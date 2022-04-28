@@ -8,12 +8,14 @@ sap.ui.define(
     // array of required modules
     ["sap/ui/core/mvc/Controller",
      "sap/m/MessageToast",
-     "sap/ui/model/json/JSONModel"],
+     "sap/ui/model/json/JSONModel",
+     "sap/ui/model/resource/ResourceModel"
+    ],
     // call back function for after modules loaded
     // Use the name of the artifact to load for naming the function parameters (without namespace)     
-    function (Controller, MessageToast, JSONModel) {
+    function (Controller, MessageToast, JSONModel, ResourceModel) {
       "use strict";
-      
+
       return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
           // lifecycle method, that is invoked by the framework when the controller is created
           onInit : function () {
@@ -25,11 +27,23 @@ sap.ui.define(
             };
             let oModel = new JSONModel(oData);
             this.getView().setModel(oModel);
+            // set i18n model on view
+            let i18nModel = new ResourceModel({bundleName: "sap.ui.demo.walkthrough.i18n.i18n"});
+            this.getView().setModel(i18nModel, "i18n");
           },
 
           onShowHello: function(){
-            // show a native JavaScript alert
-            MessageToast.show("Hello UI5!");
+            // read msg from i18n model
+            let oBundle = this.getView().getModel("i18n").getResourceBundle();
+            let sRecipient = this.getView().getModel().getProperty("/recipient/name");
+            let sMsg = oBundle.getText("app.toast.greet", [sRecipient]);
+            // show message
+            MessageToast.show(sMsg);
+          },
+
+          appInputTextFormatter: function(fieldValue){
+            let x=0;
+            return "XXX";
           }
       });
  });
