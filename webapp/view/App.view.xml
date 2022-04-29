@@ -8,33 +8,7 @@
       <pages>
          <Page title="{i18n>app.page.title}">
             <content>
-               <Panel headerText="{i18n>app.panel.title}"
-                      class="sapUiResponsiveMargin"
-                      width="auto">
-                  <content>
-
-                     <Button
-                        text="{i18n>app.button.hello}"
-                        press=".onShowHello"
-                        class="myCustomButton"/>
-
-<!-- avoid having dependency to an intermediate Controller and make use of formatMessage independently -->
-                     <Input
-                        value="{/recipient/name}"
-                        valueLiveUpdate="true"
-                        width="60%"/>
-                     <FormattedText
-                        core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
-                        htmlText="{
-                           parts: [
-                           'i18n>app.toast.greet',
-                           '/recipient/name'
-                           ],
-                           formatter: 'formatMessage'
-                        }"
-                        class="sapUiSmallMargin sapThemeBrand-asColor myCustomText"/>
-                  </content>
-               </Panel>
+               <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
             </content>
          </Page>
       </pages>

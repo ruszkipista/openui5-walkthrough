@@ -6,27 +6,15 @@
 // The browser can decide when and how the resources are loaded prior to code execution.
 sap.ui.define(
     // array of required modules
-    ["sap/ui/core/mvc/Controller",
-     "sap/m/MessageToast",
-    ],
+    ["sap/ui/core/mvc/Controller"],
     // call back function for after modules loaded
     // Use the name of the artifact to load for naming the function parameters (without namespace)     
-    function (Controller, MessageToast) {
+    function (Controller) {
       "use strict";
 
       return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
           // lifecycle method, that is invoked by the framework when the controller is created
           onInit : function () {
           },
-
-          onShowHello: function(){
-            // read msg from i18n model
-            let oBundle = this.getView().getModel("i18n").getResourceBundle();
-            let sRecipient = this.getView().getModel().getProperty("/recipient/name");
-            let sMsg = oBundle.getText("app.toast.hello", [sRecipient]);
-            // show message
-            MessageToast.show(sMsg);
-          },
-
       });
  });
