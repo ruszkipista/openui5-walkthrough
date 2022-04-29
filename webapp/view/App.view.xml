@@ -1,22 +1,36 @@
 <mvc:View controllerName="sap.ui.demo.walkthrough.controller.App"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
-   xmlns:core="sap.ui.core">
-   <Text text="Welcome to UI5!"/>
-   <Button
-      text="{i18n>app.button.hello}"
-      press=".onShowHello"/>
-   <!-- avoid having dependency to an intermediate Controller and make use of formatMessage independently -->
-   <Input
-      core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
-      value="{/recipient/name}"
-      description="{
-         parts: [
-           'i18n>app.toast.hello',
-           '/recipient/name'
-         ],
-         formatter: 'formatMessage'
-      }"
-      valueLiveUpdate="true"
-      width="60%"/>
+   xmlns:core="sap.ui.core"
+   displayBlock="true">
+   <App>
+      <pages>
+         <Page title="{i18n>app.page.title}">
+            <content>
+               <Panel headerText="{i18n>app.panel.title}">
+                  <content>
+
+                     <Button
+                        text="{i18n>app.button.hello}"
+                        press=".onShowHello"/>
+
+<!-- avoid having dependency to an intermediate Controller and make use of formatMessage independently -->
+                     <Input
+                        core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
+                        value="{/recipient/name}"
+                        description="{
+                           parts: [
+                           'i18n>app.toast.greet',
+                           '/recipient/name'
+                           ],
+                           formatter: 'formatMessage'
+                        }"
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                  </content>
+               </Panel>
+            </content>
+         </Page>
+      </pages>
+   </App>
 </mvc:View>

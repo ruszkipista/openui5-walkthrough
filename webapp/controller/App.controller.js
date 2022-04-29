@@ -23,7 +23,7 @@ sap.ui.define(
             // read msg from i18n model
             let oBundle = this.getView().getModel("i18n").getResourceBundle();
             let sRecipient = this.getView().getModel().getProperty("/recipient/name");
-            let sMsg = oBundle.getText("app.toast.greet", [sRecipient]);
+            let sMsg = oBundle.getText("app.toast.hello", [sRecipient]);
             // show message
             MessageToast.show(sMsg);
           },
