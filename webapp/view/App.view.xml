@@ -4,7 +4,7 @@
    xmlns:core="sap.ui.core"
    displayBlock="true">
    <Shell>
-   <App>
+   <App class="myAppSelector">
       <pages>
          <Page title="{i18n>app.page.title}">
             <content>
@@ -16,23 +16,23 @@
                      <Button
                         text="{i18n>app.button.hello}"
                         press=".onShowHello"
-                        class="sapUiSmallMarginEnd"/>
+                        class="myCustomButton"/>
 
 <!-- avoid having dependency to an intermediate Controller and make use of formatMessage independently -->
                      <Input
                         value="{/recipient/name}"
                         valueLiveUpdate="true"
                         width="60%"/>
-                     <Text
+                     <FormattedText
                         core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
-                        text="{
+                        htmlText="{
                            parts: [
                            'i18n>app.toast.greet',
                            '/recipient/name'
                            ],
                            formatter: 'formatMessage'
                         }"
-                        class="sapUiSmallMargin"/>
+                        class="sapUiSmallMargin sapThemeBrand-asColor myCustomText"/>
                   </content>
                </Panel>
             </content>
