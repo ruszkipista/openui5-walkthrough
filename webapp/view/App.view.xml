@@ -8,26 +8,31 @@
       <pages>
          <Page title="{i18n>app.page.title}">
             <content>
-               <Panel headerText="{i18n>app.panel.title}">
+               <Panel headerText="{i18n>app.panel.title}"
+                      class="sapUiResponsiveMargin"
+                      width="auto">
                   <content>
 
                      <Button
                         text="{i18n>app.button.hello}"
-                        press=".onShowHello"/>
+                        press=".onShowHello"
+                        class="sapUiSmallMarginEnd"/>
 
 <!-- avoid having dependency to an intermediate Controller and make use of formatMessage independently -->
                      <Input
-                        core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
                         value="{/recipient/name}"
-                        description="{
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                     <Text
+                        core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
+                        text="{
                            parts: [
                            'i18n>app.toast.greet',
                            '/recipient/name'
                            ],
                            formatter: 'formatMessage'
                         }"
-                        valueLiveUpdate="true"
-                        width="60%"/>
+                        class="sapUiSmallMargin"/>
                   </content>
                </Panel>
             </content>
