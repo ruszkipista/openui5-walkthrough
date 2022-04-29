@@ -11,7 +11,7 @@
 						e.g. use complex binding syntax
         resourceroots: set sap.ui.demo.walkthrough the namespace for all resources of the app,
 			           declare that files in the namespace are located in the same folder as index.html
-        onInit: load the "index" module (index.js file) that holds the application starter logic
+        onInit: load the manifest.json and Componen.js files that holds the application starter logic
 			    With this, avoid directly executable JavaScript code in the HTML file
 		async: run bootstrapping asynchronously: load resources simultaneously for performance reasons
     -->	
@@ -21,13 +21,18 @@
 		data-sap-ui-theme="sap_belize"
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-resourceroots='{ "sap.ui.demo.walkthrough": "./" }'
-        data-sap-ui-onInit="module:sap/ui/demo/walkthrough/index"
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
         data-sap-ui-async="true"
 		data-sap-ui-bindingSyntax="complex">
 	</script>
 </head>
 
 <!-- the ID is utilized when the index.js module / onInit loads additional content into the <body> tag -->
-<body id="body-content" class="sapUiBody"></body>
+<body id="body-content" class="sapUiBody">
+	<div data-sap-ui-component 
+		 data-name="sap.ui.demo.walkthrough" 
+		 data-id="container" 
+		 data-settings='{"id" : "walkthrough"}'></div>	
+</body>
 
 </html>

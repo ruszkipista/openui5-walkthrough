@@ -1,109 +1,54 @@
 {
-    "Source of this file": "https://sapui5.hana.ondemand.com/sdk/#/topic/3a9babace121497abea8f0ea66e156d9.html",
+    "get template file": "https://sapui5.hana.ondemand.com/sdk/#/topic/3a9babace121497abea8f0ea66e156d9.html",
+    "d1":"All application-specific configuration settings will now further be put in a separate descriptor file called manifest.json.",
+    "d2":"This clearly separates the application coding from the configuration settings and makes our app even more flexible.",
+    "d3":"For example, all SAP Fiori applications are realized as components and come with a descriptor file in order to be hosted in the SAP Fiori launchpad.",
+    "d4":"The SAP Fiori launchpad acts as an application container and instantiates the app without having a local HTML file for the bootstrap.",
+    "d5":"Instead, the descriptor file will be parsed and the component is loaded into the current HTML page.",
+    "d6":"This allows several apps to be displayed in the same context. Each app can define local settings, such as language properties, supported devices, and more.",
+    "d7":"And we can also use the descriptor file to load additional resources and instantiate models like our i18n resource bundle.",
 
-    "_version": "1.35.0",
-	
-	"start_url": "<startUrl>",
-	
+    "_version": "1.12.0",
     "sap.app": {
-        "id": "<id>",
+        "id": "sap.ui.demo.walkthrough",
         "type": "application",
-        "i18n": "<i18nPathRelativeToManifest>",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{app.title}}",
+        "description": "{{app.description}}",
         "applicationVersion": {
-            "version": "<version>"
-        },
-        "title": "{{<title>}}",
-        "tags": {
-            "keywords": [
-                "{{<keyword1>}}", "{{<keyword2>}}"
-            ]
-        },
-        "dataSources": {
-            "<dataSourceAlias>": {
-                "uri": "<uri>",
-                "settings": {
-                    "localUri": "<localUri>"
-                }
-            }
+        "version": "1.0.0"
         }
     },
     "sap.ui": {
-        "icons": {
-            "icon": "<icon>",
-            "favIcon": "<favIcon>",
-            "phone": "<phone>",
-            "phone@2": "<phone@2>",
-            "tablet": "<tablet>",
-            "tablet@2": "<tablet@2>"
-        },
+        "technology": "UI5",
         "deviceTypes": {
             "desktop": true,
             "tablet": true,
             "phone": true
-        },
-        "supportedThemes": [
-            "sap_hcb",
-            "sap_belize"
-        ]
+        }
     },
     "sap.ui5": {
-        "resources": {
-            "css": [
-                {
-                    "uri": "<uri>",
-                    "id": "<id>"
-                }
-            ]
+        "rootView": {
+            "viewName": "sap.ui.demo.walkthrough.view.App",
+            "type": "XML",
+            "id": "app"
         },
         "dependencies": {
-            "minUI5Version": "<minUI5Version>",
+            "minUI5Version": "1.93",
             "libs": {
-                "<ui5lib1>": {                   
-                    "minVersion": "<minVersion1>"
-                },
-                "<ui5lib2>": {                   
-                    "minVersion": "<minVersion2>"
-                }
-            },
-            "components": {
-                "<ui5component1>": {
-                    "minVersion": "<minComp1Version>"
-                }
+                "sap.ui.core": {},
+                "sap.m": {}
             }
         },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
-                "uri": "<uriRelativeToManifest>"
-            },
-            "": {
-                "dataSource": "<dataSourceAlias>",
-                "settings": {}
+                "settings": {
+                    "bundleName": "sap.ui.demo.walkthrough.i18n.i18n",
+                    "supportedLocales": ["", "EN","DE"],
+                    "fallbackLocale": ""
+                }
             }
-        },
-        "rootView": "<rootView>",
-        "handleValidation": false,
-        "config": {
-          
-        },
-        "routing": {
-          
-        },
-        "extends": {
-            "component" : "<extendedComponentId>",
-			"minVersion": "<minComp1Version>",
-			"extensions": {}
-        },
-        "contentDensities": {
-            "compact": false,
-            "cozy": false
         }
-    },
-
-    "sap.platform.abap": {
-        "uri": "<uri>"
-    },
-    "sap.platform.hcp": {
-        "uri": "<uri>"
     }
 }
