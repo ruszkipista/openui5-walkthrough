@@ -13,12 +13,12 @@
         <content>
             <Button
                 text="{i18n>app.button.dialog}"
-                press=".onOpenDialog"
+                press=".onPressOpenDialog"
                 class="sapUiSmallMarginEnd"/>
 
             <Button
                 text="{i18n>app.button.toast}"
-                press=".onShowToast"
+                press=".onPressShowToast"
                 class="myCustomButton"/>
 
             <Input
