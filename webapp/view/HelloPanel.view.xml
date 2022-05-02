@@ -1,33 +1,42 @@
 <mvc:View controllerName="sap.ui.demo.walkthrough.controller.HelloPanel"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:main="sap.ui.webc.main"
     xmlns:core="sap.ui.core">
+    <main:Toast
+        id="toastDialogClose"
+        duration="4000"
+        text="{i18n>app.dialog.toast}" />    
     <Panel headerText="{i18n>app.panel.title}"
-            class="sapUiResponsiveMargin"
-            width="auto">
+           class="sapUiResponsiveMargin"
+           width="auto">
         <content>
+            <Button
+                text="{i18n>app.button.dialog}"
+                press=".onOpenDialog"
+                class="sapUiSmallMarginEnd"/>
 
             <Button
-            text="{i18n>app.button.hello}"
-            press=".onShowHello"
-            class="myCustomButton"/>
+                text="{i18n>app.button.toast}"
+                press=".onShowToast"
+                class="myCustomButton"/>
 
-<!-- avoid having dependency to an intermediate Controller and make use of formatMessage independently -->
             <Input
-            value="{/recipient/name}"
-            valueLiveUpdate="true"
-            width="60%"/>
-
+                value="{/recipient/name}"
+                valueLiveUpdate="true"
+                width="60%"/>
+            
+<!-- avoid having dependency to an intermediate Controller and make use of formatMessage independently -->
             <FormattedText
-            core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
-            htmlText="{
-                parts: [
-                'i18n>app.toast.greet',
-                '/recipient/name'
-                ],
-                formatter: 'formatMessage'
-            }"
-            class="sapUiSmallMargin sapThemeBrand-asColor myCustomText"/>
+                core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
+                htmlText="{
+                    parts: [
+                    'i18n>app.toast.greet',
+                    '/recipient/name'
+                    ],
+                    formatter: 'formatMessage'
+                }"
+                class="sapUiSmallMargin sapThemeBrand-asColor myCustomText"/>
         </content>
     </Panel>
 </mvc:View>

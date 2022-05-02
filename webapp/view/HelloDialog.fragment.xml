@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+      xmlns="sap.m"
+      xmlns:l="sap.ui.layout"
+      xmlns:core="sap.ui.core" >
+   <Dialog
+        core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
+        title="{ parts: ['i18n>app.dialog.title','/recipient/name'],
+                formatter: 'formatMessage'}">
+      <l:VerticalLayout class="sapUiContentPadding" width="100%">
+        <Text text="{i18n>app.dialog.body}"
+              class="sapUiContentPadding"/>
+      </l:VerticalLayout>
+      <endButton>
+        <Button
+          type="Reject"
+          text="{i18n>app.dialog.button.cancel}"
+          press=".onPressDialogCancelButton"/>
+      </endButton>
+   </Dialog>
+</core:FragmentDefinition>
