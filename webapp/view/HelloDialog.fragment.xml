@@ -7,10 +7,10 @@
         core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
         title="{ parts: ['i18n>app.dialog.title','/recipient/name'],
                 formatter: 'formatMessage'}">
-      <l:VerticalLayout class="sapUiContentPadding" width="100%">
-        <Text text="{i18n>app.dialog.body}"
-              class="sapUiContentPadding"/>
-      </l:VerticalLayout>
+      <l:HorizontalLayout class="sapUiContentPadding">
+        <core:Icon src="sap-icon://hello-world" size="3rem"/>
+        <Text text="{i18n>app.dialog.body}"/>
+      </l:HorizontalLayout>
       <endButton>
         <Button
           type="Reject"

@@ -12,6 +12,7 @@
            width="auto">
         <content>
             <Button
+                icon="sap-icon://world"
                 text="{i18n>app.button.dialog}"
                 press=".onPressOpenDialog"
                 class="sapUiSmallMarginEnd"/>
