@@ -25,7 +25,7 @@
             <Input
                 value="{/recipient/name}"
                 valueLiveUpdate="true"
-                width="60%"/>
+                width="40%"/>
             
 <!-- avoid having dependency to an intermediate Controller and make use of formatMessage independently -->
             <FormattedText

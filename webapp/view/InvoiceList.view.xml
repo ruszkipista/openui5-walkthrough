@@ -1,7 +1,7 @@
 <mvc:View
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc">
-    <List items="{invoice>/Invoices}"
+    <List items="{invoice>/invoices}"
           headerText="{i18n>app.list.invoices.title}"
           class="sapUiResponsiveMargin"
           width="auto">
