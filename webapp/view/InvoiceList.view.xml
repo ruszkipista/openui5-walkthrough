@@ -6,7 +6,17 @@
           class="sapUiResponsiveMargin"
           width="auto">
         <items>
-            <ObjectListItem title="{invoice>Quantity} x {invoice>ProductName}"/>
+            <ObjectListItem 
+                title="{invoice>Quantity} x {invoice>ProductName}"
+                number="{
+                    parts: [{path: 'invoice>ExtendedPrice'}, {path: 'invoice>/currency'}],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {
+                        showMeasure: false
+                    }
+                }"
+                numberUnit="{invoice>/currency}"
+            />
         </items>
     </List>
 </mvc:View>
