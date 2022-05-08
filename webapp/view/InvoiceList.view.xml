@@ -3,10 +3,17 @@
     xmlns:main="sap.ui.webc.main"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core">   
-    <List items="{invoice>/invoices}"
-          headerText="{i18n>app.list.invoices.title}"
-          class="sapUiResponsiveMargin"
-          width="auto">
+    <List id="invoiceList"
+        items="{invoice>/invoices}"
+        class="sapUiResponsiveMargin"
+        width="auto">
+        <headerToolbar>
+            <Toolbar>
+               <Title text="{i18n>app.list.invoices.title}"/>
+               <ToolbarSpacer/>
+               <SearchField width="50%" search=".onChangeInvoicesFilter"/>
+            </Toolbar>
+         </headerToolbar>        
         <items>            
             <ObjectListItem 
                 title="{invoice>Quantity} x {invoice>ProductName}"
