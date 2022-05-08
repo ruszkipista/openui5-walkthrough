@@ -2,15 +2,13 @@
     xmlns="sap.m"
     xmlns:main="sap.ui.webc.main"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core">   
+    xmlns:core="sap.ui.core">
     <List id="invoiceList"
         items="{
             path : 'invoice>/invoices',
-            sorter : {
-                path : 'ShipperName',
-                descending : false,
-                group : true
-            }
+            sorter : [{ path: 'ShipperName', descending: false, group: true }, 
+                      { path: 'ProductName', descending: false }
+            ]
         }" 
         class="sapUiResponsiveMargin"
         width="auto">
