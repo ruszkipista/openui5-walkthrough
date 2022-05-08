@@ -45,8 +45,8 @@
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
                     "bundleName": "sap.ui.demo.walkthrough.i18n.i18n",
-                    "supportedLocales": ["", "EN","DE"],
-                    "fallbackLocale": ""
+                    "supportedLocales": ["EN","DE"],
+                    "fallbackLocale": "EN"
                 }
             },
             "invoice": {
