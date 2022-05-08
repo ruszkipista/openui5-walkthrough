@@ -21,6 +21,12 @@
                 }"
                 numberUnit="{invoice>/currency}"
                 numberState="{:= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+                <firstStatus>
+					<ObjectStatus text="{
+						path: 'invoice>Status',
+						formatter: '.formatter.statusText'
+					}"/>
+				</firstStatus>
                 <ObjectAttribute text="{invoice>ShipperName}" />
             </ObjectListItem>
         </items>
