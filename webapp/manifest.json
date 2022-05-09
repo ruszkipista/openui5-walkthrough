@@ -15,9 +15,20 @@
         "i18n": "i18n/i18n.properties",
         "title": "{{app.title}}",
         "description": "{{app.description}}",
-        "applicationVersion": {
-        "version": "1.0.0"
-        }
+        "applicationVersion": { "version": "1.0.0" },
+        "dataSources": {
+			"invoiceRemote": {
+				"uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+            "invoiceLocal": {
+                "type": "JSON",
+                "uri": "model/Invoices.json"
+            }
+		}
     },
     "sap.ui": {
         "technology": "UI5",
@@ -49,10 +60,9 @@
                     "fallbackLocale": "EN"
                 }
             },
-            "invoice": {
-                "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/Invoices.json"
-            }
+			"invoice": {
+				"dataSource": "invoiceLocal"
+			}            
         },
         "resources": {
             "css": [{
